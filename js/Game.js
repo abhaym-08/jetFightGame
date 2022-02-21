@@ -78,6 +78,7 @@ class Game{
       play() {
         this.handleElements();
         this.handleResetButton();
+        
     
         Player.getPlayersInfo();
         player.getJetsRank();
@@ -98,17 +99,19 @@ class Game{
             //use data form the database to display the cars in x and y direction
             var x = allPlayers[plr].positionX;
             var y = height - allPlayers[plr].positionY;
-            
-    
+            console.log(x)
+            console.log(y)
             /*if (currentlife <= 0) {
               cars[index - 1].changeImage("blast");
               cars[index - 1].scale = 0.3;
             }*/
-            jets[index - 1].position.x = x;
-            jets[index - 1].position.y = y;
+            jets[index - 1].position.x = 200;
+            jets[index - 1].position.y = 200;
     
             if (index === player.index) {
-              
+              stroke(10);
+          fill("red");
+          ellipse(x, y, 60, 60);
               
               
               /*if (player.life<=0){
@@ -132,9 +135,9 @@ class Game{
             this.handlePlayerControls();
           }*/
           
-          drawSprites();
+          
         }
-        
+        drawSprites();
       }
       handleResetButton() {
         this.resetButton.mousePressed(() => {
@@ -203,17 +206,20 @@ class Game{
           }
       
     
-        if (keyIsDown(LEFT_ARROW) && player.positionX > width / 3 - 50) {
+        if (keyIsDown(LEFT_ARROW) && player.positionX > 0) {
           
           player.positionX -= 5;
           player.update();
         }
     
-        if (keyIsDown(RIGHT_ARROW) && player.positionX < width / 2 + 300) {
+        if (keyIsDown(RIGHT_ARROW) && player.positionX < width) {
           
           player.positionX += 5;
           player.update();
         }
+      }
+      playerShooting(){
+        
       }
       gameOver() {
         swal({

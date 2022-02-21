@@ -2,6 +2,17 @@ var gameState;
 var backgroundImg, blackJetImg, whiteJetImg;
 var database, allPlayers, blastImage, form, player, playerCount
 var jets = []
+var jet1, jet2;
+
+function preload(){
+  blackJetImg = loadImage("black-jet.png")
+  whiteJetImg = loadImage("white-jet.png")
+  backgroundImg = loadImage("graySquare.png")
+  blastImage = loadImage("blast.png")
+
+
+}
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -13,13 +24,9 @@ function setup() {
   game.getState();
   game.start();
 
-  blackJetImg = loadImage("black-jet.png")
-  whiteJetImg = loadImage("white-jet.png")
-  backgroundImg = loadImage("graySquare.png")
-  blastImage = loadImage("blast.png")
+
+
 }
-
-
 function draw() {
   background(backgroundImg); 
   if (playerCount === 2){

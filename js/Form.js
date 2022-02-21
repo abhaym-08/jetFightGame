@@ -29,7 +29,10 @@ class Form{
       }
     
       handleMousePressed() {
+
+        
         this.playButton.mousePressed(() => {
+          console.log("Hello")
           this.input.hide();
           this.playButton.hide();
           var message = `
@@ -41,7 +44,7 @@ class Form{
           player.index = playerCount;
           player.addPlayer();
           player.updateCount(playerCount);
-          player.getDistance();
+          
         });
       }
     
