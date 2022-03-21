@@ -29,12 +29,12 @@ class Game{
     
         jet1 = createSprite(width / 2 - 50, height - 100);
         jet1.addImage("blackJet", blackJetImg);
-        jet1.scale = 0.07;
+        jet1.scale = 2
         jet1.addImage("blast", blastImage); //C42 //SA
     
         jet2 = createSprite(width / 2 + 100, height - 100);
         jet2.addImage("whiteJet", whiteJetImg);
-        jet2.scale = 0.07;
+        jet2.scale = 2
         jet2.addImage("blast", blastImage); //C42//SA
     
         jets = [jet1, jet2];
@@ -51,7 +51,7 @@ class Game{
           { x: width / 2 - 150, y: height - 4300, image: obstacle1Image },
           { x: width / 2, y: height - 5300, image: obstacle1Image },
         ];*/
-    
+        drawSprites();
     }
     handleElements() {
         form.hide();
@@ -105,8 +105,8 @@ class Game{
               cars[index - 1].changeImage("blast");
               cars[index - 1].scale = 0.3;
             }*/
-            jets[index - 1].position.x = 200;
-            jets[index - 1].position.y = 200;
+            jets[index - 1].position.x = x;
+            jets[index - 1].position.y = y-100;
     
             if (index === player.index) {
               stroke(10);
@@ -137,7 +137,7 @@ class Game{
           
           
         }
-        drawSprites();
+        drawSprites()
       }
       handleResetButton() {
         this.resetButton.mousePressed(() => {
@@ -218,9 +218,7 @@ class Game{
           player.update();
         }
       }
-      playerShooting(){
-        
-      }
+      
       gameOver() {
         swal({
           title: `Game Over`,

@@ -41,7 +41,7 @@ function draw() {
     game.end()
   }
   
-  drawSprites();
+  
 
 
 }
